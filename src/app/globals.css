@@ -22,4 +22,11 @@ body {
   width: 100%;
 }
 
+input {
+  padding-left: 10px;
+  font-size: smaller;
+}
+
+
+
 

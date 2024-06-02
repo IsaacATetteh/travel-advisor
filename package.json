@@ -9,6 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.19",
+    "@mui/lab": "^5.0.0-alpha.170",
+    "@mui/material": "^5.15.19",
+    "@react-google-maps/api": "^2.19.3",
+    "axios": "^1.7.2",
+    "google-map-react": "^2.2.1",
     "next": "14.2.3",
     "next-videos": "^1.4.1",
     "react": "^18",
@@ -16,6 +24,7 @@
     "react-icons": "^5.2.1"
   },
   "devDependencies": {
+    "dotenv": "^16.4.5",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative border-0 pt-40 border-red-500 max-container flex flex-col gap-20  h-42 justify-center md:gap-28 xl:flex-row">
+    <section className="relative border-0 pt-40 border-red-500 max-container flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
       <video
         className="absolute top-0 left-0 w-full h-full object-cover"
         src={require("../public/city.mp4")}
@@ -11,7 +11,7 @@ const Hero = () => {
         loop
         muted
       ></video>
-      <div className="relative items-center justify-center z-10 flex flex-1 flex-col xl:w-1/2 text-center text-white">
+      <div className="relative items-center justify-center z-10 flex flex-1 flex-col xl:w-1/2 border-b border-0 text-center text-white">
         <h1 className="font-extrabold  text-2xl text-center tracking-wide md:text-5xl">
           Unlock Your Travel Dreams <br />
           With Us!
