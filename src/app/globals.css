@@ -17,15 +17,27 @@
 }
 
 body {
-
   height: 100%;
   width: 100%;
+  padding-right: 0 !important;
+}
+
+#navbar {
+  padding-right: 0 !important;
+}
+
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+  
 }
 
 input {
   padding-left: 10px;
   font-size: smaller;
 }
+
+
 
 
 

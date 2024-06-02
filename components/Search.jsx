@@ -6,8 +6,9 @@ const Search = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
   };
+
   return (
-    <section className="relative border-0 border-red-500 h-60 pt-10 flex flex-col items-center">
+    <section className="relative border-0 border-red-500 h-60 pt-10 flex flex-col items-center mb-10">
       <div className="items-center justify-center border-0 border-blue-500 flex-col flex text-center">
         <p className="uppercase text-orange-500 font-medium">Explore now</p>
         <h1 className="mt-4 text-3xl font-bold">Find Your Dream Destination</h1>
