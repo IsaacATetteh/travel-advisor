@@ -1,6 +1,8 @@
 "use client";
+import { FaMapMarkerAlt } from "react-icons/fa";
+
 import React, { useContext } from "react";
-import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { UserLocationContext } from "../context/UserLocationContext";
 
 const containerStyle = {
@@ -31,7 +33,7 @@ const Map = () => {
       center={userLocation}
       zoom={12}
     >
-      <></>
+      <Marker position={userLocation} />{" "}
     </GoogleMap>
   );
 };
