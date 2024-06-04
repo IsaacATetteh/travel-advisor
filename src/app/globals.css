@@ -22,10 +22,6 @@ body {
   padding-right: 0 !important;
 }
 
-#navbar {
-  padding-right: 0 !important;
-}
-
 html {
   scrollbar-gutter: stable;
   overflow-y: scroll;

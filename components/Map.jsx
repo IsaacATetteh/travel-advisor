@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { UserLocationContext } from "../context/UserLocationContext";
 
 const containerStyle = {
   width: "100%",
-  height: "400px",
+  height: "450px",
 };
 
 const center = {
@@ -13,6 +14,8 @@ const center = {
 };
 
 const Map = () => {
+  const { userLocation, setUserLocation } = useContext(UserLocationContext);
+  console.log(userLocation);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
@@ -23,7 +26,11 @@ const Map = () => {
   }
 
   return (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={userLocation}
+      zoom={12}
+    >
       <></>
     </GoogleMap>
   );

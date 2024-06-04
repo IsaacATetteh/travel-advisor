@@ -1,5 +1,7 @@
-import Image from "next/image";
-import Navbar from "../../components/Navbar";
+"use client";
+import { useEffect, useState } from "react";
+import { getLocationId } from "./api";
+
 import Hero from "../../components/Hero";
 import { Grid } from "@mui/material";
 import Map from "../../components/Map";
@@ -7,6 +9,8 @@ import List from "../../components/List";
 import Search from "../../components/Search";
 
 export default function Home() {
+  const [locations, setLocations] = useState([]);
+
   return (
     <>
       <Hero />

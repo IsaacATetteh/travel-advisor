@@ -5,29 +5,7 @@ import LocationBox from "./LocationBox";
 const List = () => {
   const [selected, setSelected] = useState("hotels");
   const [rating, setRating] = useState("");
-  const locations = [
-    { name: "cool place" },
-    {
-      name: "egg",
-    },
-    {
-      name: "mcdonalds",
-    },
-    { name: "cool place" },
-    {
-      name: "egg",
-    },
-    {
-      name: "mcdonalds",
-    },
-    { name: "cool place" },
-    {
-      name: "egg",
-    },
-    {
-      name: "mcdonalds",
-    },
-  ];
+  const locations = [];
 
   return (
     <section className="w-full h-60">

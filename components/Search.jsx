@@ -1,10 +1,20 @@
 "use client";
-import React from "react";
+import React, { use } from "react";
+import { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
+import { getLocationId } from "@/app/api";
 
 const Search = () => {
-  const handleSubmit = (event) => {
+  const [query, setQuery] = useState("");
+  const [locations, setLocations] = useState([]);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    const result = await getLocationId(query); // Assuming getLocationId(query) returns the object you mentioned
+    const names = result.data.map((item) => item.name);
+    console.log(names);
+
+    //setLocations(locationNames);
   };
 
   return (
@@ -22,6 +32,8 @@ const Search = () => {
           className="flex items-center space-x-2 w-3/4 md:w-1/3 lg:w-1/4"
         >
           <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
             type="text"
             placeholder="e.g London"
             className="bg-[#FFEDE9] rounded-full h-9 w-1/2  px-4"
