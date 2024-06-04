@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FormControl, InputLabel, Select, MenuItem, Grid } from "@mui/material";
 import LocationBox from "./LocationBox";
-const List = () => {
+
+const List = ({ onCategoryChange }) => {
   const [selected, setSelected] = useState("hotels");
   const [rating, setRating] = useState("");
   const locations = [];
@@ -21,6 +22,8 @@ const List = () => {
               value={selected}
               onChange={(e) => {
                 setSelected(e.target.value);
+                onCategoryChange(e.target.value);
+                console.log(e.target.value);
               }}
               className="w-full"
               style={{ maxWidth: "200px" }} // Set a max width

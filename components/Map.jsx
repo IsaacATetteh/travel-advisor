@@ -17,7 +17,7 @@ const center = {
 
 const Map = () => {
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
-  console.log(userLocation);
+  //console.log(userLocation);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
@@ -29,6 +29,7 @@ const Map = () => {
 
   return (
     <GoogleMap
+      classname="pl-8"
       mapContainerStyle={containerStyle}
       center={userLocation}
       zoom={12}

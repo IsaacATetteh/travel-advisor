@@ -21,19 +21,19 @@ const montserrat = Montserrat({
 
 export default function RootLayout({ children }) {
   const [userLocation, setUserLocation] = useState([]);
+  useEffect(() => {
+    getUserLocation();
+  }, []);
+
   const getUserLocation = () => {
     navigator.geolocation.getCurrentPosition(function (pos) {
-      console.log(pos);
+      //console.log(pos);
       setUserLocation({
         lat: pos.coords.latitude,
         lng: pos.coords.longitude,
       });
     });
   };
-
-  useEffect(() => {
-    getUserLocation();
-  }, []);
 
   return (
     <html lang="en">
