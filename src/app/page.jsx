@@ -29,15 +29,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Search />
+      <Search
+        onCategoryChange={(value) => {
+          setCategory(value);
+          console.log(value);
+        }}
+      />
       <Grid container spacing={3} style={{ width: "100%" }}>
         <Grid item xs={12} md={5}>
-          <List
-            onCategoryChange={(value) => {
-              setCategory(value);
-              console.log(value);
-            }}
-          />
+          <List />
         </Grid>
         <Grid item xs={12} md={7}>
           <Map />

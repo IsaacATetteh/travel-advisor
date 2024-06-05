@@ -27,7 +27,7 @@ const Hero = () => {
           <div className="w-1/2 md:w-1/2 border-b-2 "></div>
         </div>
         <div className="flex border-0 lg:flex gap-4 mb-12 px-4 md:px-0 justify-center flex-row h-28 w-full mt-3 border-blue-400">
-          <div className="md:h-28 md:min-w-[200px] h-full">
+          <div className="md:h-28 md:min-w-[150px] h-full">
             <Image
               className="rounded-md h-20 md:h-full cursor-pointer object-cover"
               src="/madrid.webp"
@@ -35,7 +35,7 @@ const Hero = () => {
               height={20}
             />
           </div>
-          <div className="md:h-28 md:min-w-[200px] h-full">
+          <div className="md:h-28 md:min-w-[150px] h-full">
             <Image
               className="rounded-md h-20 md:h-full cursor-pointer object-cover"
               src="/paris.jpeg"
@@ -43,7 +43,7 @@ const Hero = () => {
               height={20}
             />
           </div>
-          <div className="md:h-28 md:min-w-[200px] h-full">
+          <div className="md:h-28 md:min-w-[150px] h-full">
             <Image
               className="rounded-md h-20 md:h-full cursor-pointer object-cover"
               src="/rome.jpeg"
@@ -51,7 +51,7 @@ const Hero = () => {
               height={20}
             />
           </div>
-          <div className="md:h-28 md:min-w-[200px] h-full">
+          <div className="md:h-28 md:min-w-[150px] h-full">
             <Image
               className="rounded-md h-20 md:h-full cursor-pointer object-cover"
               src="/tokyo.jpeg"
