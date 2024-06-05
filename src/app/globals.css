@@ -16,18 +16,15 @@
   }
 }
 
-body {
+body, html {
   height: 100%;
   width: 100%;
+  max-width: 100%;
   min-width: 344px;
   padding-right: 0 !important;
+  padding-left: 0 !important;
 }
 
-html {
-  scrollbar-gutter: stable;
-  overflow-y: scroll;
-  
-}
 
 input {
   padding-left: 10px;

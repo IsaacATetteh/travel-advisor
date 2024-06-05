@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative border-0 pt-40 border-red-500 max-container flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
+    <section className="relative border-2 pt-40 border-red-500 max-container max-w-screen flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
       <video
-        className="absolute top-0 left-0 w-full h-full object-cover"
+        className="absolute top-0 left-0 w-screen h-full object-cover"
         src={require("../public/city.mp4")}
         autoPlay
         loop

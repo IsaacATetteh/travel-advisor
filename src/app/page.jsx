@@ -35,14 +35,11 @@ export default function Home() {
           console.log(value);
         }}
       />
-      <Grid container spacing={3} style={{ width: "100%" }}>
-        <Grid item xs={12} md={5}>
-          <List />
-        </Grid>
-        <Grid item xs={12} md={7}>
-          <Map />
-        </Grid>
-      </Grid>
+      <div className="flex flex-col col-span-2">
+        {" "}
+        <Map />
+        <List resultList={resultList} />
+      </div>
     </>
   );
 }

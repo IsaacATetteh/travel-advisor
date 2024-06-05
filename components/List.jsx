@@ -1,13 +1,23 @@
 import React, { useState } from "react";
-import { FormControl, Select, MenuItem } from "@mui/material";
+import Image from "next/image";
 
-const List = ({ onCategoryChange }) => {
+const List = ({ resultList }) => {
   const [selected, setSelected] = useState("hotels");
   const [rating, setRating] = useState("");
 
   return (
-    <section className="relative border-2 mt-10 border-green-500 h-24 flex justify-center">
-      <div className="flex items-center lg:w-1/4 md:w-1/3 w-1/2 border-2  border-red-500 gap-4 h-10"></div>
+    <section className="flex justify-center items-center border-0 border-green-500 mt-4 h-48 mb-10 w-[100%]">
+      <div className="flex h-52 w-full border-0 border-blue-400 overflow-x-scroll">
+        {resultList.map((item, index) => (
+          <div
+            key={index}
+            className="w-2/5 lg:w-1/6 md:w-1/5 flex-shrink-0 border0 p-2 border-red-500"
+          >
+            <Image src="/tokyo.jpeg" width={200} height={50} />
+            <h1>{item.name}</h1>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
