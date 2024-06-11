@@ -37,7 +37,7 @@ export default function Home() {
       />
       <div className="flex flex-col col-span-2">
         {" "}
-        <Map />
+        <Map resultList={resultList} />
         <List resultList={resultList} />
       </div>
     </>

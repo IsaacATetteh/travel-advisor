@@ -1,41 +1,64 @@
 "use client";
 import { FaMapMarkerAlt } from "react-icons/fa";
-
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { UserLocationContext } from "../context/UserLocationContext";
 
-const containerStyle = {
-  width: "100%",
-  height: "450px",
-};
-
-const center = {
-  lat: -3.745,
-  lng: -38.523,
-};
-
 const Map = () => {
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
-  //console.log(userLocation);
+
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
   });
+
+  const [containerStyle, setContainerStyle] = useState({
+    width: "60%",
+    height: "800px",
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setContainerStyle({
+          width: "90%",
+          height: "450px",
+        });
+      } else {
+        setContainerStyle({
+          width: "60%",
+          height: "800px",
+        });
+      }
+    };
+
+    // Set the initial style
+    handleResize();
+
+    // Add the event listener
+    window.addEventListener("resize", handleResize);
+
+    // Remove the event listener on cleanup
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   if (!isLoaded) {
     return <div>Loading...</div>;
   }
 
   return (
-    <GoogleMap
-      classname="pl-8"
-      mapContainerStyle={containerStyle}
-      center={userLocation}
-      zoom={12}
-    >
-      <Marker position={userLocation} />{" "}
-    </GoogleMap>
+    <section className="flex justify-center">
+      <GoogleMap
+        classname="pl-8"
+        mapContainerStyle={containerStyle}
+        center={userLocation}
+        zoom={12}
+      >
+        <Marker position={userLocation} />{" "}
+      </GoogleMap>
+    </section>
   );
 };
 

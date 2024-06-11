@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed z-20 w-full h-24 shadow-xl bg-white"
+      className="fixed z-20 w-full h-24 shadow-xl bg-white backdrop-blur-md"
       id="navbar"
       style={{ paddingRight: "0 !important" }}
     >
