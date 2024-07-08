@@ -20,12 +20,12 @@ const Hero = () => {
       ></video>
       <div className="relative items-center justify-center z-10 flex flex-1 flex-col xl:w-1/2 border-b border-0 text-center text-white">
         <h1 className="font-extrabold  text-2xl text-center tracking-wide md:text-5xl">
-          Unlock Your Travel Dreams <br />
+          Fihd Hotels and Resturants <br />
           With Us!
         </h1>
         <p className="pt-5">
-          Unlock your travel dreams with us and embark on unforgettable
-          adventures to breathtaking destinations.
+          Hungry, tired, both? Our travel advisor makes finding nearby hotels
+          and resturants as easy as clicking a button.
         </p>
         <div className="flex border-0 border-orange-400 mt-16 md:mt-40 w-full justify-center items-center">
           <p className="mr-3" bold>

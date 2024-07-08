@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "../../components/Navbar";
 import { useEffect, useState } from "react";
 import { UserLocationContext } from "/context/UserLocationContext";
+import { SelectedItemContext } from "../../context/SelectedItemContext";
 import { latLng2Tile } from "google-map-react";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ const montserrat = Montserrat({
 
 export default function RootLayout({ children }) {
   const [userLocation, setUserLocation] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
   useEffect(() => {
     getUserLocation();
   }, []);
@@ -39,12 +41,16 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={montserrat.className}>
         <Provider>
-          <UserLocationContext.Provider
-            value={{ userLocation, setUserLocation }}
+          <SelectedItemContext.Provider
+            value={{ selectedItem, setSelectedItem }}
           >
-            <Navbar />
-            {children}
-          </UserLocationContext.Provider>
+            <UserLocationContext.Provider
+              value={{ userLocation, setUserLocation }}
+            >
+              <Navbar />
+              {children}
+            </UserLocationContext.Provider>
+          </SelectedItemContext.Provider>
         </Provider>
       </body>
     </html>

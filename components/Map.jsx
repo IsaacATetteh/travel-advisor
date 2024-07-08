@@ -53,7 +53,7 @@ const Map = ({ resultList }) => {
       >
         <Marker position={userLocation} />
         {resultList.map(
-          (item, index) => index <= 10 && <Markers result={item} key={index} />
+          (item, index) => index <= 10 && <Markers item={item} key={index} />
         )}
       </GoogleMap>
     </section>

@@ -18,7 +18,7 @@
     "axios": "^1.7.2",
     "google-map-react": "^2.2.1",
     "google-maps-react-markers": "^2.0.10",
-    "next": "14.2.3",
+    "next": "^14.2.4",
     "next-auth": "^4.24.7",
     "next-videos": "^1.4.1",
     "react": "^18",
