@@ -10,7 +10,7 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative border-2 pt-40 border-red-500 max-container max-w-screen flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
+    <section className="relative pt-40 max-container max-w-screen flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
       <video
         className="absolute top-0 left-0 w-screen h-full object-cover"
         src={require("../public/city.mp4")}
@@ -28,9 +28,6 @@ const Hero = () => {
           and resturants as easy as clicking a button.
         </p>
         <div className="flex border-0 border-orange-400 mt-16 md:mt-40 w-full justify-center items-center">
-          <p className="mr-3" bold>
-            Popular places
-          </p>
           <div className="w-1/2 md:w-1/2 border-b-2 "></div>
         </div>
         <div className="flex border-0 lg:flex gap-4 mb-12 px-4 md:px-0 justify-center flex-row h-28 w-full mt-3 border-blue-400">

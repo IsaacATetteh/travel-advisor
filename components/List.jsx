@@ -9,7 +9,7 @@ const List = ({ resultList }) => {
 
   return (
     <section className="flex justify-center lg:w-full text-white  border-purple-500 pb-20">
-      <div className="flex w-[95%] md:w-[70%] border-black h-[245px] overflow-x-scroll overflow-y-hidden">
+      <div className="flex w-[95%] md:w-[70%] border-black h-[200px] overflow-x-scroll overflow-y-hidden">
         {resultList.map((item, index) => (
           <div
             key={index}

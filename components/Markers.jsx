@@ -18,7 +18,7 @@ function Markers({ item }) {
             mapPaneName={OverlayView.OVERLAY_MOUSE_TARGET}
           >
             <div className="w-[300px] ml-[-100px] mt-[-230px]">
-              <LocationBox item={item} showDir={true} />
+              <LocationBox item={item} showDirection={true} />
             </div>
           </OverlayView>
         ) : null}

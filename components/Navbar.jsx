@@ -27,7 +27,7 @@ const Navbar = () => {
             alt="Logo"
             priority
           />
-          <p className="">Fly Easy</p>
+          <p className="">Travel Advisor</p>
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex">

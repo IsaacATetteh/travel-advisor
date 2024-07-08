@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { UserLocationContext } from "../context/UserLocationContext";
 
-const LocationBox = ({ item }) => {
+const LocationBox = ({ item, showDirection = false }) => {
   const GOOGLE_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
   const photo_ref = item?.photos ? item?.photos[0]?.photo_reference : "";
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
@@ -13,8 +13,8 @@ const LocationBox = ({ item }) => {
   return (
     <div
       className="w-[195px] flex-shrink-0 p-2
-     rounded-lg shadow-md mb-10
-     bg-white hover:scale-110 transition-all mt-[20px] cursor-pointer text-black border "
+     rounded-lg shadow-md 
+     bg-white hover:scale-110 transition-all mt-[10px] cursor-pointer text-black border "
     >
       <img
         src={`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photo_ref}&key=${GOOGLE_API_KEY}`}
@@ -26,16 +26,18 @@ const LocationBox = ({ item }) => {
       <h2 className="text-[12px] text-gray-400 font-semibold line-clamp-2 ">
         {item.formatted_address}
       </h2>
-      <div className="text-blue-500 text-[12px] mt-1 p-1">
-        <h2 className="flex items-center justify-between">
-          <span
-            className="underline hover:text-blue-400 font-semibold"
-            onClick={() => getDirection()}
-          >
-            Get Directions
-          </span>
-        </h2>
-      </div>
+      {showDirection ? (
+        <div className="text-blue-500 text-[12px] mt-1 p-1">
+          <h2 className="flex items-center justify-between">
+            <span
+              className="underline hover:text-blue-400 font-semibold"
+              onClick={() => getDirection()}
+            >
+              Get Directions
+            </span>
+          </h2>
+        </div>
+      ) : null}
     </div>
   );
 };
