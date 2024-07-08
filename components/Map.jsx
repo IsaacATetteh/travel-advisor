@@ -4,9 +4,10 @@ import { GoogleMap, Marker, useJsApiLoader } from "@react-google-maps/api";
 import { UserLocationContext } from "../context/UserLocationContext";
 import { useMediaQuery } from "@mui/material";
 import Markers from "./Markers";
+import { SelectedItemContext } from "../context/SelectedItemContext";
 const Map = ({ resultList }) => {
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
-
+  const { selectedItem, setSelectedItem } = useContext(SelectedItemContext);
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_API_KEY,
@@ -46,7 +47,9 @@ const Map = ({ resultList }) => {
       <GoogleMap
         classname=""
         mapContainerStyle={containerStyle}
-        center={userLocation}
+        center={
+          selectedItem.name ? selectedItem.geometry.location : userLocation
+        }
         zoom={zoomLevel}
         margin={[50, 50, 50, 50]}
         resultList={resultList}

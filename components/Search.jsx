@@ -4,7 +4,7 @@ import { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { getLocationId } from "@/app/api";
 
-const Search = ({ onCategoryChange }) => {
+const Search = ({ onCategoryChange, onRatingChange }) => {
   const [query, setQuery] = useState("");
   const [locations, setLocations] = useState([]);
   const [selected, setSelected] = useState("hotels");
