@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className="fixed z-20 w-full h-24 shadow-xl bg-white backdrop-blur-md"
+      className="fixed z-20 w-full h-20 shadow-xl bg-white backdrop-blur-md"
       id="navbar"
       style={{ paddingRight: "0 !important" }}
     >
@@ -31,11 +31,6 @@ const Navbar = () => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex">
-            <Link href="/destination">
-              <li className="ml-10 uppercase hover:border-b text-xl">
-                Destination
-              </li>
-            </Link>
             <Link href="/destination">
               <li className="ml-10 uppercase hover:border-b text-xl">
                 About Us
@@ -71,14 +66,6 @@ const Navbar = () => {
         </div>
         <div className="flex-col py-4">
           <ul>
-            <Link href="/destination">
-              <li
-                className="py-4 uppercase hover:border-b text-xl"
-                onClick={handleNav}
-              >
-                Destination
-              </li>
-            </Link>
             <Link href="/destination">
               <li
                 className="py-4 uppercase hover:border-b text-xl"

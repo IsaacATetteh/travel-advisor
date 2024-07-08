@@ -55,9 +55,9 @@ const Map = ({ resultList }) => {
         resultList={resultList}
       >
         <Marker position={userLocation} />
-        {resultList.map(
-          (item, index) => index <= 10 && <Markers item={item} key={index} />
-        )}
+        {resultList.map((item, index) => (
+          <Markers item={item} key={index} />
+        ))}
       </GoogleMap>
     </section>
   );

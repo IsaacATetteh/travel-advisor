@@ -12,16 +12,22 @@ import { UserLocationContext } from "../../context/UserLocationContext";
 export default function Home() {
   const { userLocation, setUserLocation } = useContext(UserLocationContext);
   const [category, setCategory] = useState("hotels");
+  const [rating, setRating] = useState("all");
   const [resultList, setResultList] = useState([]);
   useEffect(() => {
     getGooglePlace(category);
-  }, [category]);
+  }, [category, rating]);
 
   const getGooglePlace = (category) => {
     GlobalApi.getGooglePlace(category, userLocation.lat, userLocation.lng).then(
       (response) => {
         console.log(response.data.product.results);
-        setResultList(response.data.product.results);
+        let results = response.data.product.results;
+        console.log(rating);
+        if (rating > 0) {
+          results = results.filter((item) => item.rating >= rating);
+        }
+        setResultList(results);
       }
     );
   };
@@ -33,6 +39,9 @@ export default function Home() {
         onCategoryChange={(value) => {
           setCategory(value);
           console.log(value);
+        }}
+        onRatingChange={(value) => {
+          setRating(value);
         }}
       />
       <Map resultList={resultList} />

@@ -8,8 +8,8 @@ const List = ({ resultList }) => {
   const [rating, setRating] = useState("");
 
   return (
-    <section className="flex justify-center lg:w-full text-white  border-purple-500 border-0">
-      <div className="flex w-[95%] md:w-[70%]  border-black h-[220px] overflow-x-scroll overflow-y-hidden">
+    <section className="flex justify-center lg:w-full text-white  border-purple-500 pb-20">
+      <div className="flex w-[95%] md:w-[70%] border-black h-[245px] overflow-x-scroll overflow-y-hidden">
         {resultList.map((item, index) => (
           <div
             key={index}

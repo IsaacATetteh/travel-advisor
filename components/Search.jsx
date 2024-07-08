@@ -18,7 +18,7 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
   };
 
   return (
-    <section className="relative border- border-red-500 mb-10  h-52 mt-12 flex flex-col items-center">
+    <section className="relative border-red-500 mb-10  h-52 mt-12 flex flex-col items-center">
       <div className="items-center justify-center border-0 border-blue-500 flex-col flex text-center">
         <p className="uppercase text-orange-500 font-medium">Explore now</p>
         <h1 className="mt-4 mb-2 text-3xl font-bold">
@@ -32,18 +32,12 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
         action=""
         className="flex justify-center   text-xs border-purple-500 space-x-2 w-[95%] md:w-3/4 lg:w-1/2"
       >
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          type="text"
-          placeholder="Location"
-          className="bg-[#FFEDE9] rounded-full h-9 W-96 md:w-72   px-4"
-        />
         <select
           value={rating}
           placeholder="Rating"
           onChange={(e) => {
-            setRating(e.target.value);
+            setRating(parseFloat(e.target.value));
+            onRatingChange(parseFloat(e.target.value));
           }}
           type="text"
           className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
@@ -51,10 +45,10 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
           <option value="" disabled selected hidden>
             Rating
           </option>
-          <option>All</option>
-          <option>Above 3</option>
-          <option>Above 4</option>
-          <option>Above 4.5</option>
+          <option value="">All</option>
+          <option value={3}>Above 3</option>
+          <option value={4}>Above 4</option>
+          <option value={4.5}>Above 4.5</option>
         </select>
         <select
           value={selected}
