@@ -30,14 +30,14 @@ const Search = ({ onCategoryChange }) => {
       </div>
       <form
         action=""
-        className="flex items-center border-0  text-xs md:px-0 border-purple-500 space-x-2 w-full md:w-3/4 lg:w-1/2"
+        className="flex justify-center   text-xs border-purple-500 space-x-2 w-[95%] md:w-3/4 lg:w-1/2"
       >
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           type="text"
           placeholder="Location"
-          className="bg-[#FFEDE9] rounded-full h-9 w-1/2 text-sm px-4"
+          className="bg-[#FFEDE9] rounded-full h-9 W-96 md:w-72   px-4"
         />
         <select
           value={rating}
@@ -46,11 +46,10 @@ const Search = ({ onCategoryChange }) => {
             setRating(e.target.value);
           }}
           type="text"
-          className="bg-[#FFEDE9] rounded-full h-9 w-1/2  px-4"
+          className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
         >
           <option value="" disabled selected hidden>
-            {" "}
-            Rating{" "}
+            Rating
           </option>
           <option>All</option>
           <option>Above 3</option>
@@ -66,19 +65,11 @@ const Search = ({ onCategoryChange }) => {
           }}
           type="text"
           placeholder="e.g London"
-          className="bg-[#FFEDE9] rounded-full h-9 w-1/2  px-4"
+          className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
         >
           <option>Hotels</option>
           <option>Resturants</option>
         </select>
-        <button
-          type="submit"
-          onClick={handleSubmit}
-          className="bg-[#F35D24]  gap-1 text-white rounded-full h-9 w-1/2 flex items-center justify-center "
-        >
-          <IoIosSearch />
-          <p className="text-xs">Search</p>
-        </button>
       </form>
     </section>
   );

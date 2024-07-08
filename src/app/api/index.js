@@ -1,5 +1,4 @@
 "use client";
-"use client";
 import axios from "axios";
 
 export const getLocationId = async (query) => {

@@ -2,6 +2,13 @@ import React from "react";
 import Image from "next/image";
 
 const Hero = () => {
+  const images = [
+    { src: "/madrid.webp", alt: "Madrid" },
+    { src: "/paris.jpeg", alt: "Paris" },
+    { src: "/rome.jpeg", alt: "Rome" },
+    { src: "/tokyo.jpeg", alt: "Tokyo" },
+  ];
+
   return (
     <section className="relative border-2 pt-40 border-red-500 max-container max-w-screen flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
       <video
@@ -27,38 +34,17 @@ const Hero = () => {
           <div className="w-1/2 md:w-1/2 border-b-2 "></div>
         </div>
         <div className="flex border-0 lg:flex gap-4 mb-12 px-4 md:px-0 justify-center flex-row h-28 w-full mt-3 border-blue-400">
-          <div className="md:h-28 md:min-w-[150px] h-full">
-            <Image
-              className="rounded-md h-20 md:h-full cursor-pointer object-cover"
-              src="/madrid.webp"
-              width={200}
-              height={20}
-            />
-          </div>
-          <div className="md:h-28 md:min-w-[150px] h-full">
-            <Image
-              className="rounded-md h-20 md:h-full cursor-pointer object-cover"
-              src="/paris.jpeg"
-              width={200}
-              height={20}
-            />
-          </div>
-          <div className="md:h-28 md:min-w-[150px] h-full">
-            <Image
-              className="rounded-md h-20 md:h-full cursor-pointer object-cover"
-              src="/rome.jpeg"
-              width={200}
-              height={20}
-            />
-          </div>
-          <div className="md:h-28 md:min-w-[150px] h-full">
-            <Image
-              className="rounded-md h-20 md:h-full cursor-pointer object-cover"
-              src="/tokyo.jpeg"
-              width={200}
-              height={20}
-            />
-          </div>
+          {images.map((image, index) => (
+            <div key={index} className="md:h-28 md:min-w-[150px] h-full">
+              <Image
+                className="rounded-md h-20 md:h-full cursor-pointer object-cover"
+                src={image.src}
+                alt={image.alt}
+                width={200}
+                height={20}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

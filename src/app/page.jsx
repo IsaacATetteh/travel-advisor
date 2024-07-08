@@ -35,11 +35,8 @@ export default function Home() {
           console.log(value);
         }}
       />
-      <div className="flex flex-col col-span-2">
-        {" "}
-        <Map resultList={resultList} />
-        <List resultList={resultList} />
-      </div>
+      <Map resultList={resultList} />
+      <List resultList={resultList} />
     </>
   );
 }
