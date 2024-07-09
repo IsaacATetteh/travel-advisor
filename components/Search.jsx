@@ -61,6 +61,9 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
           placeholder="e.g London"
           className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
         >
+          <option value="" disabled selected hidden>
+            Select
+          </option>
           <option>Hotels</option>
           <option>Resturants</option>
         </select>
