@@ -1,13 +1,11 @@
 "use client";
-import React, { use } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 import { getLocationId } from "@/app/api";
 
 const Search = ({ onCategoryChange, onRatingChange }) => {
   const [query, setQuery] = useState("");
-  const [locations, setLocations] = useState([]);
-  const [selected, setSelected] = useState("hotels");
+  const [selected, setSelected] = useState("");
   const [rating, setRating] = useState("");
 
   const handleSubmit = async (event) => {
@@ -42,7 +40,7 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
           type="text"
           className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
         >
-          <option value="" disabled selected hidden>
+          <option value="" disabled hidden>
             Rating
           </option>
           <option value="">All</option>
@@ -55,17 +53,16 @@ const Search = ({ onCategoryChange, onRatingChange }) => {
           onChange={(e) => {
             setSelected(e.target.value);
             onCategoryChange(e.target.value);
-            console.log(e.target.value);
           }}
           type="text"
           placeholder="e.g London"
           className="bg-[#FFEDE9] rounded-full h-9  md:w-72  px-4"
         >
-          <option value="" disabled selected hidden>
-            Select
+          <option value="" disabled hidden>
+            Select a category
           </option>
           <option>Hotels</option>
-          <option>Resturants</option>
+          <option>Restaurants</option>
         </select>
       </form>
     </section>

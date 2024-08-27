@@ -31,17 +31,17 @@ const Navbar = () => {
         </Link>
         <div className="hidden sm:flex">
           <ul className="hidden sm:flex">
-            <Link href="/destination">
+            <Link href="">
               <li className="ml-10 uppercase hover:border-b text-xl">
                 About Us
               </li>
             </Link>
-            <Link href="/destination">
+            <Link href="/">
               <li className="ml-10 uppercase hover:border-b text-xl">
                 Testomonial
               </li>
             </Link>
-            <Link href="/destination">
+            <Link href="">
               <li className="mx-10  uppercase hover:border-b text-xl">
                 Gallery
               </li>

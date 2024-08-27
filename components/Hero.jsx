@@ -9,15 +9,20 @@ const Hero = () => {
     { src: "/tokyo.jpeg", alt: "Tokyo" },
   ];
 
+  const handleVideoClick = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <section className="relative pt-40 max-container max-w-screen flex flex-col gap-20 h-42 justify-center md:gap-28 xl:flex-row">
       <video
-        className="absolute top-0 left-0 w-screen h-full object-cover"
+        className="absolute top-0 left-0 w-screen h-full object-cover -z-10 overflow-hidden"
         src={require("../public/city.mp4")}
         autoPlay
         loop
         muted
-      ></video>
+        onClick={handleVideoClick}
+      />
       <div className="relative items-center justify-center z-10 flex flex-1 flex-col xl:w-1/2 border-b border-0 text-center text-white">
         <h1 className="font-extrabold  text-2xl text-center tracking-wide md:text-5xl">
           Fihd Hotels and Resturants <br />
